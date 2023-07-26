@@ -4,7 +4,24 @@ var curtemp = document.getElementById("cur-temp");
 var curwind = document.getElementById("cur-wind");
 var curhumid = document.getElementById("cur-humid");
 var searchBtn = document.getElementById("search-btn");
+var searchText = document.getElementById("search-history");
 var searchHistory = [];
+
+$(document).ready(function () {
+  createTable();
+});
+
+function createTable() {
+  var data = localStorage.getItem("Search-History");
+  var searchHistory = data ? JSON.parse(data) : [];
+  for (var i = 0; i < searchHistory.length; i++) {
+    console.log(searchHistory[i]);
+    var create = document.createElement("button");
+    create.setAttribute("id", "search-" + i);
+    create.textContent = searchHistory[i];
+    searchText.appendChild(create);
+  }
+}
 
 searchBtn.addEventListener("click", function () {
   //grab text input to feed into api
@@ -14,9 +31,12 @@ searchBtn.addEventListener("click", function () {
   console.log(city);
   fetchApi(city);
   //send input to local storage
+  var data = localStorage.getItem("Search-History");
+  var searchHistory = data ? JSON.parse(data) : [];
+  localStorage.getItem("Search-History");
   searchHistory.push(city);
   localStorage.setItem("Search-History", JSON.stringify(searchHistory));
-  //search history input feed into api
+  createTable();
 });
 function fetchApi(city) {
   // fetch api and return response onto page
@@ -83,3 +103,5 @@ function fetchApi(city) {
         "Humidity: " + data.list[36].main.humidity + "%";
     });
 }
+
+//init();
