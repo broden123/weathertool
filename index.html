@@ -3,8 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather Tool</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    />
   </head>
-  <body></body>
+  <body>
+    <div class="col bg-white rounded">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand">Weather Tool</a>
+        </div>
+      </nav>
+    </div>
+    <div class="d-flex flex-row">
+      <form>
+        <div class="form-group col p-2">
+          <label for="city-input">Search For A City</label>
+          <input type="text" class="form-control mt-1" id="city-input" />
+          <button type="submit" class="btn btn-primary mt-1">Search</button>
+        </div>
+      </form>
+      <div class="col p-2 border border-dark mt-5 text-center">
+        <h1 id="main-weather-head">Current Weather in:</h1>
+        <h3 id="cur-condition">Current Condition:</h3>
+        <h3 id="cur-temp">Current Temp:</h3>
+        <h3 id="cur-wind">Current Wind:</h3>
+        <h3 id="cur-humid">Current Humidity:</h3>
+      </div>
+    </div>
+    <div class="d-flex flex-row">
+    <div class="border-top" id="search-history">
+        <h4>Search History</h4>
+    </div>
+    <div class="col p-2 border border-dark mt-5">
+        <div class="d-flex flex-row justify-content-center">
+            <div class="flex-fill p-1 border border-dark m-1 text-center">
+                <h3 id="1-day">Tomorrow</h3>
+                <h4 id="1-cond">Condition:</h4>
+                <h4 id="1-temp">Temp:</h4>
+                <h4 id="1-wind">Wind:</h4>
+                <h4 id="1-humid">Humidity:</h4>
+            </div>
+            <div class="flex-fill p-1 border border-dark m-1 text-center">
+                <h3 id="2-day">2 days out</h3>
+                <h4 id="2-cond">Condition:</h4>
+                <h4 id="2-temp">Temp:</h4>
+                <h4 id="2-wind">Wind:</h4>
+                <h4 id="2-humid">Humidity:</h4>
+            </div>
+            <div class="flex-fill p-1 border border-dark m-1 text-center">
+                <h3 id="3-day">3 days out</h3>
+                <h4 id="3-cond">Condition:</h4>
+                <h4 id="3-temp">Temp:</h4>
+                <h4 id="3-wind">Wind:</h4>
+                <h4 id="3-humid">Humidity:</h4>
+            </div>
+            <div class="flex-fill p-1 border border-dark m-1 text-center">
+                <h3 id="4-day">4 days out</h3>
+                <h4 id="4-cond">Condition:</h4>
+                <h4 id="4-temp">Temp:</h4>
+                <h4 id="4-wind">Wind:</h4>
+                <h4 id="4-humid">Humidity:</h4>
+            </div>
+            <div class="flex-fill p-1 border border-dark m-1 text-center">
+                <h3 id="5-day">Tomorrow</h3>
+                <h4 id="5-cond">Condition:</h4>
+                <h4 id="5-temp">Temp:</h4>
+                <h4 id="5-wind">Wind:</h4>
+                <h4 id="5-humid">Humidity:</h4>
+            </div>
+        </div>
+    </div>
+  </body>
   <script src="/assets/script.js"></script>
 </html>
