@@ -23,16 +23,18 @@
       </nav>
     </div>
 
-      <form>
-        <div class="d-flex flex-row justify-content-center">
+    <form>
+      <div class="d-flex flex-row justify-content-center">
         <div class="form-group col-6 p-2">
           <label for="city-input">Search For A City</label>
           <input type="text" class="form-control mt-1" id="city-input" />
-          <button type="submit" class="btn btn-primary mt-1" id="search-btn">Search</button>
+          <button type="submit" class="btn btn-primary mt-1" id="search-btn">
+            Search
+          </button>
         </div>
-        </div>
-      </form>
-      <div class="d-flex flex-row">
+      </div>
+    </form>
+    <div class="d-flex flex-row">
       <div class="col p-2 border border-dark mt-5 text-center">
         <h1 id="main-weather-head">Current Weather in:</h1>
         <h3 id="cur-condition">Current Condition:</h3>
@@ -42,48 +44,50 @@
       </div>
     </div>
     <div class="col p-2 border border-dark mt-5">
-        <div class="d-flex flex-row justify-content-center">
-            <div class="flex-fill p-1 border border-dark m-1 text-center">
-                <h3 id="1-day">Tomorrow</h3>
-                <h4 id="1-cond">Condition:</h4>
-                <h4 id="1-temp">Temp:</h4>
-                <h4 id="1-wind">Wind:</h4>
-                <h4 id="1-humid">Humidity:</h4>
-            </div>
-            <div class="flex-fill p-1 border border-dark m-1 text-center">
-                <h3 id="2-day">2 days out</h3>
-                <h4 id="2-cond">Condition:</h4>
-                <h4 id="2-temp">Temp:</h4>
-                <h4 id="2-wind">Wind:</h4>
-                <h4 id="2-humid">Humidity:</h4>
-            </div>
-            <div class="flex-fill p-1 border border-dark m-1 text-center">
-                <h3 id="3-day">3 days out</h3>
-                <h4 id="3-cond">Condition:</h4>
-                <h4 id="3-temp">Temp:</h4>
-                <h4 id="3-wind">Wind:</h4>
-                <h4 id="3-humid">Humidity:</h4>
-            </div>
-            <div class="flex-fill p-1 border border-dark m-1 text-center">
-                <h3 id="4-day">4 days out</h3>
-                <h4 id="4-cond">Condition:</h4>
-                <h4 id="4-temp">Temp:</h4>
-                <h4 id="4-wind">Wind:</h4>
-                <h4 id="4-humid">Humidity:</h4>
-            </div>
-            <div class="flex-fill p-1 border border-dark m-1 text-center">
-                <h3 id="5-day">5 days out</h3>
-                <h4 id="5-cond">Condition:</h4>
-                <h4 id="5-temp">Temp:</h4>
-                <h4 id="5-wind">Wind:</h4>
-                <h4 id="5-humid">Humidity:</h4>
-            </div>
+      <div class="d-flex flex-row justify-content-center">
+        <div class="flex-fill p-1 border border-dark m-1 text-center">
+          <h3 id="1-day">Tomorrow</h3>
+          <h4 id="1-cond">Condition:</h4>
+          <h4 id="1-temp">Temp:</h4>
+          <h4 id="1-wind">Wind:</h4>
+          <h4 id="1-humid">Humidity:</h4>
         </div>
+        <div class="flex-fill p-1 border border-dark m-1 text-center">
+          <h3 id="2-day">2 days out</h3>
+          <h4 id="2-cond">Condition:</h4>
+          <h4 id="2-temp">Temp:</h4>
+          <h4 id="2-wind">Wind:</h4>
+          <h4 id="2-humid">Humidity:</h4>
+        </div>
+        <div class="flex-fill p-1 border border-dark m-1 text-center">
+          <h3 id="3-day">3 days out</h3>
+          <h4 id="3-cond">Condition:</h4>
+          <h4 id="3-temp">Temp:</h4>
+          <h4 id="3-wind">Wind:</h4>
+          <h4 id="3-humid">Humidity:</h4>
+        </div>
+        <div class="flex-fill p-1 border border-dark m-1 text-center">
+          <h3 id="4-day">4 days out</h3>
+          <h4 id="4-cond">Condition:</h4>
+          <h4 id="4-temp">Temp:</h4>
+          <h4 id="4-wind">Wind:</h4>
+          <h4 id="4-humid">Humidity:</h4>
+        </div>
+        <div class="flex-fill p-1 border border-dark m-1 text-center">
+          <h3 id="5-day">5 days out</h3>
+          <h4 id="5-cond">Condition:</h4>
+          <h4 id="5-temp">Temp:</h4>
+          <h4 id="5-wind">Wind:</h4>
+          <h4 id="5-humid">Humidity:</h4>
+        </div>
+      </div>
     </div>
     <div class="d-flex flex-column">
-        <div class="border-top mt-5 text-center" id="search-history">
-            <h4>Search History</h4>
-        </div>
+      <div class="border-top mt-5 text-center">
+        <h4>Search History</h4>
+        <div class="d-flex flex-column" id="search-history"></div>
+      </div>
+    </div>
   </body>
   <script src="/assets/script.js"></script>
 </html>

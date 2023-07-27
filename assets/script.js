@@ -11,32 +11,22 @@ $(document).ready(function () {
   createTable();
 });
 
-function createTable() {
-  var data = localStorage.getItem("Search-History");
-  var searchHistory = data ? JSON.parse(data) : [];
-  for (var i = 0; i < searchHistory.length; i++) {
-    console.log(searchHistory[i]);
-    var create = document.createElement("button");
-    create.setAttribute("id", "search-" + i);
-    create.textContent = searchHistory[i];
-    searchText.appendChild(create);
-  }
-}
-
 searchBtn.addEventListener("click", function () {
   //grab text input to feed into api
   event.preventDefault();
   var textInput = document.getElementById("city-input");
   var city = $(textInput).val();
-  console.log(city);
   fetchApi(city);
   //send input to local storage
   var data = localStorage.getItem("Search-History");
   var searchHistory = data ? JSON.parse(data) : [];
   localStorage.getItem("Search-History");
   searchHistory.push(city);
-  localStorage.setItem("Search-History", JSON.stringify(searchHistory));
-  createTable();
+  //filter search history to prevent duplicates then set to local storage
+  var filteredSearch = searchHistory.filter((element, index) => {
+    return searchHistory.indexOf(element) === index;
+  });
+  localStorage.setItem("Search-History", JSON.stringify(filteredSearch));
 });
 function fetchApi(city) {
   // fetch api and return response onto page
@@ -103,5 +93,24 @@ function fetchApi(city) {
         "Humidity: " + data.list[36].main.humidity + "%";
     });
 }
-
-//init();
+function createTable() {
+  var data = localStorage.getItem("Search-History");
+  var searchHistory = data ? JSON.parse(data) : [];
+  var filteredSearch = searchHistory.filter((element, index) => {
+    return searchHistory.indexOf(element) === index;
+  });
+  for (var i = 0; i < filteredSearch.length; i++) {
+    console.log(filteredSearch[i]);
+    var create = document.createElement("button");
+    create.setAttribute("id", "search-" + i);
+    create.setAttribute("class", "justify-content-center");
+    create.textContent = filteredSearch[i];
+    searchText.appendChild(create);
+    //click on searched history to display data again
+    create.addEventListener("click", function () {
+      console.log(this.textContent);
+      var city = this.textContent;
+      fetchApi(city);
+    });
+  }
+}
